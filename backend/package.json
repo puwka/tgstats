@@ -1,0 +1,22 @@
+{
+  "name": "tg-year-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "hono": "^4.0.8",
+    "@hono/node-server": "^1.8.2",
+    "telegram": "^2.26.4",
+    "@supabase/supabase-js": "^2.39.7",
+    "dotenv": "^16.4.5",
+    "input": "^1.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.1",
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
+  }
+}
+
