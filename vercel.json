@@ -1,11 +1,22 @@
 {
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api" },
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
+  // Команда сборки для Vercel (использует скрипт из корневого package.json)
+  "buildCommand": "npm run vercel-build",
+
+  // Куда складываются статические файлы фронтенда (мы копируем туда содержимое frontend/dist)
+  "outputDirectory": "public",
+
+  // Настройки серверлесс-функций (наш Hono backend в api/index.ts)
   "functions": {
     "api/index.ts": {
       "maxDuration": 60
     }
-  }
+  },
+
+  // Роутинг:
+  // - все запросы к /api/* идут в функцию /api
+  // - остальные пути (маршруты SPA) отдаются index.html
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
