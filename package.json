@@ -10,7 +10,8 @@
   "scripts": {
     "install:all": "npm install && npm install -w backend && npm install -w frontend",
     "dev": "concurrently \"npm run dev -w backend\" \"npm run dev -w frontend\"",
-    "build": "npm run build -w frontend && mkdir -p public && cp -r frontend/dist/* public/"
+    "build": "npm run build -w frontend && mkdir -p public && cp -r frontend/dist/* public/",
+    "vercel-build": "npm run build -w frontend && mkdir -p public && cp -r frontend/dist/* public/"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
